@@ -1,0 +1,15 @@
+<h2>Create Film</h2>
+<%= form_for @film do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br />
+  <%= f.label :synopsis %>
+  <%= f.text_field :synopsis %>
+  <br />
+  <%= f.label :year %>
+  <%= f.number_field :year %>
+  <br />
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <%= f.submit "Add a film!"%>
+<% end %>

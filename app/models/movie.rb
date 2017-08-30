@@ -1,11 +1,10 @@
-class Film < ApplicationRecord
+class Movie < ApplicationRecord
     include HTTParty
-    base_uri 'http://www.omdbapi.com/?apikey=d31f1a94'
-    &i=tt2294629
+    base_uri 'http://www.omdbapi.com/?apikey=d31f1a94&type=movie&s=a'
   
     def self.generate(api_id)
-      film = find_by api_id: api_id
-      return star_war unless star_war.nil?
+      movie = find_by api_id: api_id
+      return movie unless movie.nil?
   
       response = get "/#{api_id}"
       placeholder_image = "https://www.placecage.com/c/#{200 + api_id}/#{200 + api_id}"
